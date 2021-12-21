@@ -8,7 +8,10 @@ module.exports = {
     if (!message.mentions.members.first() && !message.mentions.users.first())
       return message.reply({
         embeds: [
-          { title: "You did not mention a member", footer: "© Heppcat" },
+          {
+            title: "You did not mention a member",
+            color: db.get("embedColor"),
+          },
         ],
       });
     if (
@@ -20,10 +23,7 @@ module.exports = {
         embeds: [
           {
             title: "You do not have permission to do this",
-            footer: {
-              text: "© Heppcat",
-              icon_url: "https://heppcat.com/img/icon.png",
-            },
+            color: db.get("embedColor"),
           },
         ],
       });
@@ -32,16 +32,15 @@ module.exports = {
         embeds: [
           {
             title: "You do not have permission to do this",
-            footer: {
-              text: "© Heppcat",
-              icon_url: "https://heppcat.com/img/icon.png",
-            },
+            color: db.get("embedColor"),
           },
         ],
       });
     if (message.mentions.members.first().bannable === false)
       return message.reply({
-        embeds: [{ title: "I cannot ban that user", footer: "© Heppcat" }],
+        embeds: [
+          { title: "I cannot ban that user", color: db.get("embedColor") },
+        ],
       });
 
     //confirm?

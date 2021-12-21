@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
+const db = require("quick.db")
 module.exports = {
-  name: "Help",
+  name: "help",
   description: "Help Command",
   execute(message, args) {
     let embed = new Discord.MessageEmbed();
