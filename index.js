@@ -21,7 +21,7 @@ client.on("messageCreate", (message) => {
   }
 });
 
-client.on("guildMemberAdd", (member) => {
+/*client.on("guildMemberAdd", (member) => {
   let MemberAdd = new Discord.MessageEmbed();
   MemberAdd.setTitle("Welcome " + member.user.tag);
   MemberAdd.setImage(member.avatarURL({ dynamic: true }));
@@ -53,6 +53,6 @@ client.on("guildMemberRemove", (member) => {
   member.guild.channels.cache
     .get(db.get("welcome"))
     .send({ embeds: [MemberRemove] });
-});
+});*/
 
 client.login(config.token);
