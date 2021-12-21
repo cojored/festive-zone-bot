@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const db = require("quick.db")
+const db = require("quick.db");
 module.exports = {
   name: "help",
   description: "Help Command",
@@ -12,9 +12,9 @@ module.exports = {
     } else {
       db.set("embedColor", "#FF0000");
     }
-    for (command in message.client.commands) {
+    message.client.commands.map((command) => {
       embed.addField("!" + command.name, command.description);
-    }
+    });
     message.channel.send({ embeds: [embed] });
   },
 };

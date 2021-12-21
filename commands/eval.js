@@ -32,9 +32,6 @@ module.exports = {
         )
         .setColor("#00FF00");
       message.channel.send({ embeds: [results] });
-      setTimeout(() => {
-        console.log(console.clear());
-      }, 10000);
     } catch (error) {
       results = new Discord.MessageEmbed()
         .setTitle("Eval")
